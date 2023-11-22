@@ -1,3 +1,4 @@
+import 'package:fitness/view/login/complete_profile_view.dart';
 import 'package:fitness/view/login/signup_view.dart';
 import 'package:fitness/view/on_boarding/on_boarding_view.dart';
 import 'package:flutter/material.dart';

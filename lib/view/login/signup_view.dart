@@ -1,5 +1,6 @@
 import 'package:fitness/common_widget/round_button.dart';
 import 'package:fitness/common_widget/round_textField.dart';
+import 'package:fitness/view/login/complete_profile_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
@@ -116,7 +117,15 @@ class _SignUpViewState extends State<SignUpView> {
                   SizedBox(
                     height: media.height * 0.13,
                   ),
-                  RoundButton(title: "Register", onPressed: () {}),
+                  RoundButton(
+                      title: "Register",
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    const CompleteProfileView()));
+                      }),
                   SizedBox(
                     height: media.height * 0.02,
                   ),
