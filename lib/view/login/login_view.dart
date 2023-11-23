@@ -1,21 +1,21 @@
 import 'package:fitness/common_widget/round_button.dart';
 import 'package:fitness/common_widget/round_textField.dart';
 import 'package:fitness/view/login/complete_profile_view.dart';
-import 'package:fitness/view/login/login_view.dart';
+import 'package:fitness/view/login/signup_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 
 import '../../common/color_extension.dart';
 
-class SignUpView extends StatefulWidget {
-  const SignUpView({super.key});
+class LoginView extends StatefulWidget {
+  const LoginView({super.key});
 
   @override
-  State<SignUpView> createState() => _SignUpViewState();
+  State<LoginView> createState() => _LoginViewState();
 }
 
-class _SignUpViewState extends State<SignUpView> {
+class _LoginViewState extends State<LoginView> {
   bool isCheck = false;
   @override
   Widget build(BuildContext context) {
@@ -24,10 +24,9 @@ class _SignUpViewState extends State<SignUpView> {
       backgroundColor: TColor.white,
       body: SingleChildScrollView(
         child: SafeArea(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(
-              horizontal: 20,
-            ),
+          child: Container(
+            height: media.height,
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
             child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
@@ -39,7 +38,7 @@ class _SignUpViewState extends State<SignUpView> {
                     style: TextStyle(color: TColor.black, fontSize: 16),
                   ),
                   Text(
-                    "Create an Account",
+                    "Welcome Back",
                     style: TextStyle(
                         color: TColor.black,
                         fontSize: 20,
@@ -47,20 +46,6 @@ class _SignUpViewState extends State<SignUpView> {
                   ),
                   SizedBox(
                     height: media.height * 0.03,
-                  ),
-                  const RoundTextField(
-                    hintText: "First Name",
-                    icon: "assets/images/profile_person.png",
-                  ),
-                  SizedBox(
-                    height: media.height * 0.02,
-                  ),
-                  const RoundTextField(
-                    hintText: "Last Name",
-                    icon: "assets/images/profile_person.png",
-                  ),
-                  SizedBox(
-                    height: media.height * 0.02,
                   ),
                   const RoundTextField(
                     hintText: "Email",
@@ -89,37 +74,25 @@ class _SignUpViewState extends State<SignUpView> {
                             ))),
                   ),
                   Row(
-                    //crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      IconButton(
-                          onPressed: () {
-                            setState(() {
-                              isCheck = !isCheck;
-                            });
-                          },
-                          icon: Icon(
-                            isCheck
-                                ? Icons.check_box_rounded
-                                : Icons.check_box_outline_blank_outlined,
-                            color: TColor.gray,
-                            size: 20,
-                          )),
                       Padding(
                         padding: const EdgeInsets.only(top: 8),
                         child: Expanded(
                           child: Text(
-                            "By continuing you accept our Privacy Policy and\n Terms of Use",
-                            style: TextStyle(color: TColor.gray, fontSize: 10),
+                            "Forgot your password?",
+                            style: TextStyle(
+                                color: TColor.gray,
+                                fontSize: 10,
+                                decoration: TextDecoration.underline),
                           ),
                         ),
                       ),
                     ],
                   ),
-                  SizedBox(
-                    height: media.height * 0.13,
-                  ),
+                  Spacer(),
                   RoundButton(
-                      title: "Register",
+                      title: "Login",
                       onPressed: () {
                         Navigator.push(
                             context,
@@ -205,23 +178,20 @@ class _SignUpViewState extends State<SignUpView> {
                   ),
                   TextButton(
                     onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const LoginView()));
+                      Navigator.pop(context);
                     },
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Text(
-                          "Already have an account? ",
+                          "Don't have an account yet? ",
                           style: TextStyle(
                             color: TColor.black,
                             fontSize: 14,
                           ),
                         ),
                         Text(
-                          "Login",
+                          "Register",
                           style: TextStyle(
                               color: TColor.black,
                               fontSize: 14,

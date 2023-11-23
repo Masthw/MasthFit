@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:fitness/common_widget/round_button.dart';
+import 'package:fitness/view/login/welcome_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
@@ -106,7 +107,7 @@ class _WhatYourGoalViewState extends State<WhatYourGoalView> {
             ),
           ),
           Container(
-            padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
+            padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
             width: media.width,
             child: Column(
               children: [
@@ -135,7 +136,7 @@ class _WhatYourGoalViewState extends State<WhatYourGoalView> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const WhatYourGoalView()));
+                              builder: (context) => const WelcomeView()));
                     }),
               ],
             ),
