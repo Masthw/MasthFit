@@ -1,5 +1,6 @@
 import 'package:fitness/common_widget/round_button.dart';
 import 'package:fitness/common_widget/round_textField.dart';
+import 'package:fitness/view/login/what_your_goal_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
@@ -24,7 +25,9 @@ class _CompleteProfileViewState extends State<CompleteProfileView> {
       body: SingleChildScrollView(
         child: SafeArea(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 30.0, vertical: 10),
+            padding: const EdgeInsets.symmetric(
+              horizontal: 30.0,
+            ),
             child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
@@ -34,7 +37,7 @@ class _CompleteProfileViewState extends State<CompleteProfileView> {
                     fit: BoxFit.fitWidth,
                   ),
                   SizedBox(
-                    height: media.height * 0.02,
+                    height: media.height * 0.01,
                   ),
                   Text(
                     "Let's complete your profile",
@@ -173,7 +176,7 @@ class _CompleteProfileViewState extends State<CompleteProfileView> {
                           ],
                         ),
                         SizedBox(
-                          height: media.width * 0.05,
+                          height: media.width * 0.025,
                         ),
                         RoundButton(
                             title: "Next >",
@@ -182,7 +185,7 @@ class _CompleteProfileViewState extends State<CompleteProfileView> {
                                   context,
                                   MaterialPageRoute(
                                       builder: (context) =>
-                                          const CompleteProfileView()));
+                                          const WhatYourGoalView()));
                             }),
                       ],
                     ),
