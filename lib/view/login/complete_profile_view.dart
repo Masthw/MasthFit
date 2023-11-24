@@ -51,7 +51,7 @@ class _CompleteProfileViewState extends State<CompleteProfileView> {
                     style: TextStyle(color: TColor.gray, fontSize: 13),
                   ),
                   SizedBox(
-                    height: media.height * 0.03,
+                    height: media.height * 0.02,
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 2.0),

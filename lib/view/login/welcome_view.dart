@@ -1,5 +1,6 @@
 import 'package:fitness/common/color_extension.dart';
 import 'package:fitness/common_widget/round_button.dart';
+import 'package:fitness/view/main_tab/main_tab_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
@@ -52,10 +53,10 @@ class _WelcomeViewState extends State<WelcomeView> {
                 RoundButton(
                     title: "Go To Home",
                     onPressed: () {
-                      /* Navigator.push(
+                      Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const WelcomeView()));*/
+                              builder: (context) => const MainTabView()));
                     }),
               ],
             )),

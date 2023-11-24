@@ -26,7 +26,7 @@ class _LoginViewState extends State<LoginView> {
         child: SafeArea(
           child: Container(
             height: media.height,
-            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 25),
             child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
@@ -76,21 +76,16 @@ class _LoginViewState extends State<LoginView> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Padding(
-                        padding: const EdgeInsets.only(top: 8),
-                        child: Expanded(
-                          child: Text(
-                            "Forgot your password?",
-                            style: TextStyle(
-                                color: TColor.gray,
-                                fontSize: 10,
-                                decoration: TextDecoration.underline),
-                          ),
-                        ),
+                      Text(
+                        "Forgot your password?",
+                        style: TextStyle(
+                            color: TColor.gray,
+                            fontSize: 10,
+                            decoration: TextDecoration.underline),
                       ),
                     ],
                   ),
-                  Spacer(),
+                  const Spacer(),
                   RoundButton(
                       title: "Login",
                       onPressed: () {
