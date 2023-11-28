@@ -1,8 +1,8 @@
 import 'package:fitness/common/color_extension.dart';
 import 'package:fitness/common_widget/tab_button.dart';
+import 'package:fitness/view/home/blank_view.dart';
+import 'package:fitness/view/home/home_view.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 
 class MainTabView extends StatefulWidget {
   const MainTabView({super.key});
@@ -13,10 +13,16 @@ class MainTabView extends StatefulWidget {
 
 class _MainTabViewState extends State<MainTabView> {
   int selecTab = 0;
+  final PageStorageBucket pageBucket = PageStorageBucket();
+  Widget currentTab = const HomeView();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: TColor.white,
+      body: PageStorage(
+        bucket: pageBucket,
+        child: currentTab,
+      ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: SizedBox(
         width: 70,
@@ -60,6 +66,7 @@ class _MainTabViewState extends State<MainTabView> {
                 isActive: selecTab == 0,
                 onTap: () {
                   selecTab = 0;
+                  currentTab = const HomeView();
                   if (mounted) {
                     setState(() {});
                   }
@@ -70,6 +77,7 @@ class _MainTabViewState extends State<MainTabView> {
                 isActive: selecTab == 1,
                 onTap: () {
                   selecTab = 1;
+                  currentTab = const BlankView();
                   if (mounted) {
                     setState(() {});
                   }
@@ -83,6 +91,7 @@ class _MainTabViewState extends State<MainTabView> {
                 isActive: selecTab == 2,
                 onTap: () {
                   selecTab = 2;
+                  currentTab = const BlankView();
                   if (mounted) {
                     setState(() {});
                   }
